@@ -2,6 +2,9 @@
 var fs = require('fs');
 var path = require('path');
 
+// node 0.6 support
+fs.existsSync = fs.existsSync || path.existsSync;
+
 // main_paths are the paths where our mainprog will be able to load from
 // we store these to avoid grabbing the modules that were loaded as a result
 // of a dependency module loading its dependencies, we only care about deps our
