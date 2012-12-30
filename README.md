@@ -15,7 +15,6 @@ var modules = lsmod();
     express: '3.0.5',
     hbs: '2.0.1'
 }
-});
 ```
 
 Note that the version is the actual installed version and not the dependency version string.
