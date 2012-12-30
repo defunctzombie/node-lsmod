@@ -2,7 +2,7 @@
 
 lsmod fetches the list of modules and the versions loaded by the entry file for your node.js app.
 
-# use
+## use
 
 ```javascript
 var lsmod = require('lsmod');
@@ -19,7 +19,7 @@ var modules = lsmod();
 
 Note that the version is the actual installed version and not the dependency version string.
 
-# install via [npm](https://npmjs.org)
+## install via [npm](https://npmjs.org)
 
 ```
 npm install lsmod
