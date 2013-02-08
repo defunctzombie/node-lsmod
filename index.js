@@ -9,10 +9,7 @@ fs.existsSync = fs.existsSync || path.existsSync;
 // we store these to avoid grabbing the modules that were loaded as a result
 // of a dependency module loading its dependencies, we only care about deps our
 // mainprog loads
-// remove trailing node_modules
-var main_paths = require.main.paths.map(function(p) {
-    return path.dirname(p);
-});
+var main_paths = require.main.paths;
 
 module.exports = function() {
     var paths = Object.keys(require.cache);
@@ -27,19 +24,20 @@ module.exports = function() {
         var dir = p;
 
         (function updir() {
-            dir = path.dirname(dir);
+            var orig = dir;
+            dir = path.dirname(orig);
 
-            if (!dir || seen[dir]) {
+            if (!dir || orig === dir || seen[orig]) {
                 return;
             }
             else if (main_paths.indexOf(dir) < 0) {
                 return updir();
             }
 
-            var pkgfile = path.join(dir, 'package.json');
+            var pkgfile = path.join(orig, 'package.json');
             var exists = fs.existsSync(pkgfile);
 
-            seen[dir] = true;
+            seen[orig] = true;
 
             // travel up the tree if no package.json here
             if (!exists) {
