@@ -1,6 +1,6 @@
 {
   "name": "lsmod",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "fetch list of modules and versions installed for the project root",
   "main": "index.js",
   "scripts": {
