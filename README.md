@@ -1,4 +1,4 @@
-# lsmod [![Build Status](https://secure.travis-ci.org/shtylman/node-lsmod.png?branch=master)](https://travis-ci.org/shtylman/node-lsmod)
+# lsmod [![Build Status](https://secure.travis-ci.org/defunctzombie/node-lsmod.png?branch=master)](https://travis-ci.org/defunctzombie/node-lsmod)
 
 lsmod fetches the list of modules and the versions loaded by the entry file for your node.js app.
 
