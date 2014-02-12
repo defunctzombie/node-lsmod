@@ -9,7 +9,7 @@ fs.existsSync = fs.existsSync || path.existsSync;
 // we store these to avoid grabbing the modules that were loaded as a result
 // of a dependency module loading its dependencies, we only care about deps our
 // mainprog loads
-var main_paths = require.main.paths;
+var main_paths = require.main && require.main.paths || [];
 
 module.exports = function() {
     var paths = Object.keys(require.cache);
