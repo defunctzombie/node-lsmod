@@ -12,7 +12,7 @@ fs.existsSync = fs.existsSync || path.existsSync;
 var main_paths = require.main && require.main.paths || [];
 
 module.exports = function() {
-    var paths = Object.keys(require.cache);
+    var paths = Object.keys(require.cache || []);
 
     // module information
     var infos = {};
